@@ -51,7 +51,7 @@ const DeployToAzureStorage = async () =>
 		}
 		const urlHost = sasUrl.substring(0, urlEndOfHost + 1)
 		const urlQuery = sasUrl.substring(urlEndOfHost + 2)
-		const destUrl = `${urlHost}${container}?${urlQuery}`
+		const destUrl = `${urlHost}${container}?${urlQuery}/`
 		core.setSecret(urlQuery)
 
 		const azCopyCommand = (process.platform === "win32") ? "azcopy" : "azcopy10"
